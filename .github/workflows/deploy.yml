@@ -21,13 +21,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Node
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: 24 # 強制使用 24 版，解決您的 Deprecated 警告
 
       - name: Install dependencies
-        run: npm install --legacy-peer-deps
+        run: npm install --legacy-peer-deps # 解決可能存在的套件衝突
 
       - name: Build
         run: npm run build
